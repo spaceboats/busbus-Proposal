@@ -1,0 +1,130 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+
+\title{EECS 581 Senior Design Capstone Project Proposal
+busbus: All transit data, one interface}
+\author{Nick Gilliland, Alex Gustafson, Zane Ralston, Monica Shafii, Ian Weller}
+\date{10-30-2014}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.125in}
+
+
+\begin{document}
+\maketitle
+
+\section{Abstract}
+
+Proposal to create a common API for accessing mass-transit data (including live data where available)
+across multiple agencies in which both the APIs and the data are provided in a multitude ways. 
+With this API, the aim is to demonstrate the desired functionality (a convenient open-source tool 
+for developers) by building projects on top of the platform, such as a web and mobile app, and 
+feeding data into an LED board for display.
+
+\section{Specific Aims}
+
+The busbus platform aims to provide a single, open API for developers to use to be able to access all
+mass-transit data--both static and live where available--from all existing agencies on a global scale. 
+With a public repository on GitHub, developers can feel free to extend upon the API as needed,
+along with creating new and exciting projects with the ease of access to open data (instead of 
+putting a considerable amount of effort into how to access specific information differently in each 
+agency's API, or how to transform the returned data so it will all be of a consistent format).
+
+**ALSO WANT TO TALK ABOUT THE FORMAT IN WHICH WE WILL RETURN THE DATA, WHY WE
+ARE STRAYING FROM GTFS**
+
+\section{Background (Existing Work)}
+\subsection{Agency-Specific APIs}
+
+Numerous agency-specific APIs exist for mass-transit in metropolitan areas on a global scale.
+These may be sufficient if one is only looking to create an application with a local scope. However,
+as developers, our goal is to write code as a foundation to be built upon, that is not bound by a
+limited scope, but is useful to our peers and prevents the cost of effort put into the same 
+problem again and again. In referencing even a few of the existing agency-specific APIs, it
+becomes apparent that the data that can be accessed, and the format of the data returned, 
+vary greatly. The CTA Bus Tracker API provides vehicle locations, route data, prediction data and 
+service bulletins and returns this data in XML and formats. [1] The MBTA Real-Time API provides 
+stops by location, routes by stop, predictions by stop, alert headers, and alerts by id, and returns 
+this data in XML and JSON formats. [2] 
+
+\subsection{Multi-Agency APIs/Apps}
+There also exist APIs/services that attempt to unify access to data over agency-specific APIs.
+However, these generally either encompass a limited number of agencies, a limited scope
+of mass-transit available, or are not open APIs at all. The NextBus API only provides data for
+around 50 agencies within the U.S. and Canada, and for the most part, only provides bus data 
+and not data for other forms of transportation. [3] The Transit App covers data for 200+ agencies
+and 86 global metropolitan areas, but doesn't provide an open API for developers to retrieve the
+data, but rather an application. [4]
+
+
+\section{Proposed Solution/Preliminary Design}
+\subsection{API}
+Our proposed project will be a Python object-oriented API, inspired by SQLAlchemy's query system.
+We currently intend to include the following entities in the API, in terms of accessible data:
+\begin{itemize}
+\item Agency
+\item Route
+\item Stop
+\item Arrival
+\end{itemize}
+Each entity will be rather rich in the content it can provide--for instance, an Arrival can have scheduled
+and/or live arrival times.
+
+**INCLUDE CODE SNIPPETS/PLATFORM DIAGRAM FROM SLIDESHOW HERE?**
+
+\subsection{Projects}
+We intend to build the following projects on top of the busbus platform:
+\begin{itemize}
+\item LED board
+\item Web application
+\item Android application
+\end{itemize}
+The purpose of this part of our intent is to show our API works as intended, and possibly
+fine-tune it in the process (in a sense, these are some of our test cases). We also wanted 
+to demonstrate the actual application of the tool we are building, and how our peers
+could possibly use it.
+
+\section{Milestones/Schedule}
+**INCLUDE GANTT CHART**
+
+\section{Tools/Cost Estimate}
+\subsection{Language}
+We are intending to Python 2.7, Python 3.3 and later. We're most likely utilizing the following
+libraries and modules:
+\begin{itemize}
+\item requests (proper HTTP handling)
+\item arrow (proper timezone handling)
+\item CherryPy (for the web server)
+\item gevent (for asynchronous message handling, so data consumers can subscribe to events
+without having to make repeated API calls)
+\end{itemize}
+
+\subsection{Hardware}
+The only hardware we are using is for the LED board project as follows.
+\begin{itemize}
+\item Raspberry Pi Model B+ 512MB RAM (\$39.95)
+\item Raspberry Pi B+ Frosted White Enclosure (\$8.95)
+\item SD/MicroSD Memory Card (4 GB SDHC) (\$7.95)
+\item 5V 1A (1000mA) USB port power supply - UL Listed (\$5.95)
+\item USB cable - A/MicroB (\$3.95)
+\item Assembled Pi Cobbler Plus - Breakout Cable for Raspberry Pi B+ (\$6.95)
+\item Medium 16x32 RGB LED matrix panel × 3 at \$24.95 each (\$74.85)
+\item 5V 10A switching power supply (\$25.00)
+\item Female DC Power adapter - 2.1mm jack to screw terminal block (\$2.00)
+\item Final Cost (\$230) **WHAT ACCOUNTED FOR THE EXTRA COST?**
+\end{itemize}
+
+\section{References}
+\paragraph{[1]} Chicago Transit Authority (CTA), \textit{Bus Tracker API Documentation},
+
+http://www.transitchicago.com/assets/1/developer\_center/BusTime\_Developer\_API\_Guide.pdf
+
+\paragraph{[2]} Massachusetts Bay Transit Authority (MBTA), \textit{MBTA-Realltime Quick-Start Guide},
+
+http://realtime.mbta.com/Portal/Content/Documents/MBTA-realtime\_APIQuickStart\_2014-08-04.pdf
+
+\paragraph{[3]} NextBus, \textit{API Portal}, http://api-portal.anypoint.mulesoft.com/nextbus/api/nextbus-api
+
+\paragraph{[4]} Transit App, \textit{Regions}, http://thetransitapp.com/regions
+
+\end{document}
