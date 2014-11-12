@@ -15,8 +15,8 @@ busbus: All transit data, one interface}
 
 \section{Abstract}
 
-Proposal to create a common API for accessing mass-transit data (including live data where available)
-across multiple agencies in which both the APIs and the data are provided in a multitude ways. 
+The spaceboats senior design group is developing a common API for accessing mass-transit data
+across a multiple agencies in which both the APIs and the data are provided in a multitude ways. 
 With this API, the aim is to demonstrate the desired functionality (a convenient open-source tool 
 for developers) by building projects on top of the platform, such as a web and mobile app, and 
 feeding data into an LED board for display.
@@ -26,9 +26,10 @@ feeding data into an LED board for display.
 The busbus platform aims to provide a single, open API for developers to use to be able to access all
 mass-transit data--both static and live where available--from all existing agencies on a global scale. 
 With a public repository on GitHub, developers can feel free to extend upon the API as needed,
-along with creating new and exciting projects with the ease of access to open data (instead of 
-putting a considerable amount of effort into how to access specific information differently in each 
-agency's API, or how to transform the returned data so it will all be of a consistent format).
+along with creating new and exciting projects with the ease of access to open data. The goal is for
+developers to be able to focus on their applications instead of putting a considerable amount of
+effort into how to access specific information differently in each agency's API, or how to transform
+the returned data so it will all be of a consistent format.
 
 **ALSO WANT TO TALK ABOUT THE FORMAT IN WHICH WE WILL RETURN THE DATA, WHY WE
 ARE STRAYING FROM GTFS**
@@ -43,7 +44,7 @@ limited scope, but is useful to our peers and prevents the cost of effort put in
 problem again and again. In referencing even a few of the existing agency-specific APIs, it
 becomes apparent that the data that can be accessed, and the format of the data returned, 
 vary greatly. The CTA Bus Tracker API provides vehicle locations, route data, prediction data and 
-service bulletins and returns this data in XML and formats. [1] The MBTA Real-Time API provides 
+service bulletins and returns this data in XML and other formats. [1] The MBTA Real-Time API provides 
 stops by location, routes by stop, predictions by stop, alert headers, and alerts by id, and returns 
 this data in XML and JSON formats. [2] 
 
