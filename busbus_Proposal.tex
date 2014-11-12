@@ -44,18 +44,20 @@ limited scope, but is useful to our peers and prevents the cost of effort put in
 problem again and again. In referencing even a few of the existing agency-specific APIs, it
 becomes apparent that the data that can be accessed, and the format of the data returned, 
 vary greatly. The CTA Bus Tracker API provides vehicle locations, route data, prediction data and 
-service bulletins and returns this data in XML and other formats. [1] The MBTA Real-Time API provides 
+service bulletins and returns this data in XML and other formats.\footnote{Chicago Transit Authority (CTA), \textit{Bus Tracker API Documentation},
+http://www.transitchicago.com/assets/1/developer\_center/BusTime\_Developer\_API\_Guide.pdf} The MBTA Real-Time API provides 
 stops by location, routes by stop, predictions by stop, alert headers, and alerts by id, and returns 
-this data in XML and JSON formats. [2] 
+this data in XML and JSON formats.\footnote{Massachusetts Bay Transit Authority (MBTA), \textit{MBTA-Realltime Quick-Start Guide},
+http://realtime.mbta.com/Portal/Content/Documents/MBTA-realtime\_APIQuickStart\_2014-08-04.pdf} 
 
 \subsection{Multi-Agency APIs/Apps}
 There also exist APIs/services that attempt to unify access to data over agency-specific APIs.
 However, these generally either encompass a limited number of agencies, a limited scope
 of mass-transit available, or are not open APIs at all. The NextBus API only provides data for
 around 50 agencies within the U.S. and Canada, and for the most part, only provides bus data 
-and not data for other forms of transportation. [3] The Transit App covers data for 200+ agencies
+and not data for other forms of transportation.\footnote{NextBus, \textit{API Portal}, http://api-portal.anypoint.mulesoft.com/nextbus/api/nextbus-api} The Transit App covers data for 200+ agencies
 and 86 global metropolitan areas, but doesn't provide an open API for developers to retrieve the
-data, but rather an application. [4]
+data, but rather an application.\footnote{Transit App, \textit{Regions}, http://thetransitapp.com/regions}
 
 
 \section{Proposed Solution/Preliminary Design}
@@ -115,17 +117,5 @@ The only hardware we are using is for the LED board project as follows.
 \item Final Cost (\$230) **WHAT ACCOUNTED FOR THE EXTRA COST?**
 \end{itemize}
 
-\section{References}
-\paragraph{[1]} Chicago Transit Authority (CTA), \textit{Bus Tracker API Documentation},
-
-http://www.transitchicago.com/assets/1/developer\_center/BusTime\_Developer\_API\_Guide.pdf
-
-\paragraph{[2]} Massachusetts Bay Transit Authority (MBTA), \textit{MBTA-Realltime Quick-Start Guide},
-
-http://realtime.mbta.com/Portal/Content/Documents/MBTA-realtime\_APIQuickStart\_2014-08-04.pdf
-
-\paragraph{[3]} NextBus, \textit{API Portal}, http://api-portal.anypoint.mulesoft.com/nextbus/api/nextbus-api
-
-\paragraph{[4]} Transit App, \textit{Regions}, http://thetransitapp.com/regions
 
 \end{document}
