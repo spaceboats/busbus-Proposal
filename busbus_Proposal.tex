@@ -2,6 +2,8 @@
 \usepackage[letterpaper]{geometry}
 \usepackage{fullpage}
 \usepackage[hidelinks]{hyperref}
+\usepackage{fancyvrb}
+\usepackage{color}
 
 \title{EECS 581 Senior Design Capstone Project Proposal \\
 busbus: All transit data, one interface}
@@ -74,18 +76,14 @@ data, but rather an application.\footnote{Transit App, \textit{Regions}, \url{ht
 
 \section{Proposed Solution/Preliminary Design}
 \subsection{API}
-Our proposed project will be a Python object-oriented API, inspired by SQLAlchemy's query system.
-We currently intend to include the following entities in the API, in terms of accessible data:
-\begin{itemize}
-\item Agency
-\item Route
-\item Stop
-\item Arrival
-\end{itemize}
-Each entity will be rather rich in the content it can provide --- for instance, an Arrival can have scheduled
-and/or live arrival times.
+Our proposed project will be a Python API which allows the user to iterate over entities matching a filter.
+We currently intend to include entities for \textit{agencies}, \textit{routes}, \textit{stops}, and \textit{arrivals}.
+Each entity will provide all the data busbus knows about --- for instance, an Arrival can have both scheduled
+and live arrival times.
 
-**INCLUDE CODE SNIPPETS/PLATFORM DIAGRAM FROM SLIDESHOW HERE?**
+The API is still in flux, but we're intending to have it look something like this:
+
+\input{sample_code.tex}
 
 \subsection{Projects}
 We intend to build the following projects on top of the busbus platform:
