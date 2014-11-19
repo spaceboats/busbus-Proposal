@@ -106,12 +106,18 @@ The API is still in flux, but we're intending to have interactions with it look 
 \end{figure}
 
 \subsection{Projects}
-We intend to build the following projects on top of the busbus platform:
-\begin{itemize}
-\item LED board\\
+We intend to build projects on top of the busbus platform.
+We want to show our API works as intended, and possibly
+fine-tune it in the process --- in a sense, these are some of our test cases. We also want
+to demonstrate the actual application of the tool we are building, and how our peers
+could possibly use it.
+
+\subsubsection{LED board}
     The LED board is 3 smaller LED boards and a Raspberry Pi that controls them.  They are all on a peace of plexiglass that has been attached to the wall with a chain.  To display text or an image you can give it a JSON string and it will parse it to display what you tell it to. An example of the json that is used to make the board a solid color is curl -X POST -H "Content-type:application/json" -d '{"mode":"fill", "color":[0, 0, 255]}' http://3001-ledboard.local:8080/state; echo To integrate this into our project we will have it show data that we will be getting from busbus.  This will allow us to have it show different information about any stop in the world (that busbus supports). A useful application of this would be that would be useful would be we could have it show the next bus that would stop outside Eaton Hall.
-\item Web application
-\item Android application\\
+
+\subsubsection{Web application}
+
+\subsubsection{Android application}
     The Android application will allow users to either select a stop or find bus stops near them using gps location.
     Once users have found the stop that they want, they will be able to view upcoming scheduled arrival times and
     predicted realtime bus arrivals if realtime data is available for that transit agency. Users will also be able
@@ -120,12 +126,6 @@ We intend to build the following projects on top of the busbus platform:
     Development of this application will be done using Android Studio. The Android Application will most likely never
     be put on the Google Play store because it would require us to host a service, which is outside the scope of this
     project. At this time we plan to only support Android version 4.4 and later to help speed up development time.
-
-\end{itemize}
-We want to show our API works as intended, and possibly
-fine-tune it in the process --- in a sense, these are some of our test cases. We also want
-to demonstrate the actual application of the tool we are building, and how our peers
-could possibly use it.
 
 \section{Milestones/Schedule}
 **INCLUDE GANTT CHART**
