@@ -95,9 +95,15 @@ We currently intend to provide support for \textit{agencies}, \textit{routes}, \
 Each of these entities will provide all the data busbus knows about; for instance, an Arrival can have both a scheduled arrival time
 and a prediction based on the current location of a vehicle.
 
-The API is still in flux, but we're intending to have it look something like this:
+The API is still in flux, but we're intending to have interactions with it look something like figure~\ref{fig:pythonsample}.
 
-\input{sample_code.tex}
+\begin{figure}[h]
+	\begin{center}
+		\input{sample_code.tex}
+	\end{center}
+	\caption{Proposed sample code for interacting with the \texttt{busbus} Python module}
+	\label{fig:pythonsample}
+\end{figure}
 
 \subsection{Projects}
 We intend to build the following projects on top of the busbus platform:
