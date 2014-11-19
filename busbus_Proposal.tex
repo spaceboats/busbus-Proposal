@@ -5,6 +5,7 @@
 \usepackage{fancyvrb}
 \usepackage{color}
 \usepackage{textcomp}
+\usepackage{upquote}
 
 \title{EECS 581 Senior Design Capstone Project Proposal \\
 busbus: All transit data, one interface}
@@ -113,7 +114,23 @@ to demonstrate the actual application of the tool we are building, and how our p
 could possibly use it.
 
 \subsubsection{LED board}
-    The LED board is 3 smaller LED boards and a Raspberry Pi that controls them.  They are all on a peace of plexiglass that has been attached to the wall with a chain.  To display text or an image you can give it a JSON string and it will parse it to display what you tell it to. An example of the json that is used to make the board a solid color is curl -X POST -H "Content-type:application/json" -d '{"mode":"fill", "color":[0, 0, 255]}' http://3001-ledboard.local:8080/state; echo To integrate this into our project we will have it show data that we will be getting from busbus.  This will allow us to have it show different information about any stop in the world (that busbus supports). A useful application of this would be that would be useful would be we could have it show the next bus that would stop outside Eaton Hall.
+The LED board has already been purchased and assembled. It consists of three smaller LED boards that have been linked together and a Raspberry Pi that controls them.
+The three LED boards along with the Raspberry Pi were mounted on a piece of plexiglass.
+The Rasberry Pi runs a controller that we wrote\footnote{spaceboats/3001-ledboard on GitHub, \url{https://github.com/spaceboats/3001-ledboard}}
+that will parse commands given in JSON.
+An example of a command that can be used to
+make the board display a solid color is:
+
+\begin{verbatim}
+curl -X POST -H "Content-type:application/json" -d \
+    '{"mode":"fill", "color":[0, 0, 255]}' \
+    http://3001-ledboard.local:8080/state
+\end{verbatim}
+
+To integrate this into our project
+we will have it display data that we will be getting from busbus.  This will allow
+us to show different information about any stop in the world (that
+busbus supports). The end goal for the LED board is to show the next few buses that will arrive outside Eaton Hall.
 
 \subsubsection{Web application}
 
