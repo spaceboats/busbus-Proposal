@@ -89,11 +89,11 @@ data.\footnote{Transit App, \textit{Regions}, \url{http://thetransitapp.com/regi
 
 
 \section{Proposed Solution/Preliminary Design}
-\subsection{API}
+\subsection{Python Library}
 Our proposed project will be a Python API which allows the user to iterate over entities matching a filter.
 We currently intend to include entities for \textit{agencies}, \textit{routes}, \textit{stops}, and \textit{arrivals}.
-Each entity will provide all the data busbus knows about --- for instance, an Arrival can have both scheduled
-and live arrival times.
+Each entity will provide all the data busbus knows about; for instance, an Arrival can have both a scheduled arrival time
+and a prediction based on the current location of a vehicle.
 
 The API is still in flux, but we're intending to have it look something like this:
 
