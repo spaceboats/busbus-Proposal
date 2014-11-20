@@ -26,7 +26,7 @@ The spaceboats senior design group is developing a common platform for accessing
 across multiple agencies with different APIs and data formats.
 We intend to demonstrate the desired functionality (a convenient open-source data tool
 for developers) by building projects on top of the platform, such as a web application, an Android app, and
-an LED board that shows data about upcoming buses.
+an LED board that displays data about upcoming buses.
 
 \section{Specific Aims}
 
@@ -42,7 +42,7 @@ the returned data into a consistent format.
 
 \section{Existing Transit Data Work}
 There are a lot of existing standards and services built around transit data.
-However, none of them simplify the process for developers of dealing with multiple transit agencies.
+However, none of them simplify the process of dealing with multiple transit agencies for developers.
 
 It's important to note that the busbus platform is \textit{not} attempting to be a new transit data standard ---
 we want to leverage existing APIs and make them more easily accessible for programmers.
@@ -57,15 +57,15 @@ or an object-oriented API.
 
 In addition, GTFS doesn't have realtime data. GTFS-realtime is a specification built to add
 realtime data, but it's not widely used. Larger North American transit agencies provide
-data in this format but also their own, richer realtime data APIs.
+data in this format but also provide their own, richer realtime data APIs.
 
 \subsection{Agency-Specific APIs}
 
 Numerous agency-specific APIs exist for mass-transit in metropolitan areas.
 These may be sufficient if developers are only looking to create an application with a local scope. However,
-a common goal of developers is to write code as a foundation to be built upon that is not unnecessarily limited,
-but is useful to our peers, and prevents the cost of effort put into the same
-problem again and again.
+a common goal amongst developers is to write code as a foundation to be built upon that is not unnecessarily limited,
+but is useful to our peers, and prevents the cost of effort put into solving the same
+problem multiple times.
 
 In referencing even a few of the existing agency-specific APIs, it
 becomes apparent that the data that can be accessed, and the format of the data returned, 
@@ -116,8 +116,8 @@ to demonstrate the actual application of the tool we are building, and how our p
 could possibly use it.
 
 \subsubsection{LED board}
-The LED board has already been purchased and assembled. It consists of three smaller LED boards that have been linked together and a Raspberry Pi that controls them.
-The three LED boards along with the Raspberry Pi were mounted on a piece of plexiglass.
+The LED board has already been purchased and assembled. It consists of three smaller LED boards that have been linked together, and a Raspberry Pi that controls them,
+all of which were mounted on a piece of plexiglass.
 The Rasberry Pi runs a controller that we wrote\footnote{spaceboats/3001-ledboard on GitHub, \url{https://github.com/spaceboats/3001-ledboard}}
 that will parse commands given in JSON.
 An example of a command that can be used to
@@ -140,9 +140,9 @@ There are many ideas that could be implemented in this application. Some of whic
 
 \begin{itemize}
     \item Drop pins on a map of cities/areas that busbus supports.
-    \item Be able to click on stop pins to see which bus numbers and what time the next buses will be there.
-    \item Be able to drop pins of bus locations on a map and dynamically update them every few seconds.
-    \item Some sort of weird transit game. For example, be able to walk around a map and get on live buses.
+    \item Ability to click on stop pins to see bus numbers and times the next buses will be there.
+    \item Ability to drop pins of bus locations on a map and dynamically update them every few seconds.
+    \item Some sort of transit game. An example game would allow a player to walk around a selected map and board live buses.
 \end{itemize}
 
 \subsubsection{Android application}
@@ -152,12 +152,12 @@ predicted realtime bus arrivals, if realtime data is available for that transit 
 to save stops, so the stops that they use frequently will be readily available.
 
 Ease of use is important
-for showing off the capability of the busbus platform so a high quality user interface will be a priority.
+for showing off the capability of the busbus platform, so a high quality user interface will be a priority.
 Development of this application will be done using Android Studio.
 
 The Android application will most likely never
-be put on the Google Play store because it would require us to host a service, which is outside the scope of this
-project; we instead intend to open source it and provide it as a starting base for others.
+be put on the Google Play store because it would require us to host a service, which is outside of the scope of this
+project; we instead intend to make the application open source, providing it as a starting base for others.
 At this time we plan to only support Android version 4.4 and later to help speed up development time.
 
 \section{Milestones and Schedule}
